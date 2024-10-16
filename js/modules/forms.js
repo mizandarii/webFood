@@ -1,11 +1,11 @@
 import {closeModal, openModal} from './modal';
-import{postData} from 'services/services';
+import{postData} from '../services/services';
 function forms(formsSelector, modalTimerId) {
     const forms = document.querySelectorAll(formsSelector);
     const message = {
         loading: 'img/form/spinner.svg',
-        success: 'Спасибо! Скоро мы с вами свяжемся',
-        failure: 'Что-то пошло не так...'
+        success: 'Aitäh! Võtame teiega peagi ühendust',
+        failure: 'Midagi läks valesti...'
     };
 
     forms.forEach(item => {
