@@ -37,7 +37,7 @@ function cards(){
                     <div class = "menu__item-total"><span>${this.price}</span>евро/день:</div>
                 </div>
             `;
-            this.parent.apped(element);
+            this.parent.append(element);
         }
     }
 
