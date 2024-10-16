@@ -3,14 +3,14 @@ function slider({container, slide, nextArrow, totalCounter, currentCounter, wrap
     let slideIndex = 1;
 
     const slides = document.querySelectorAll(slide),
-        prev = document.querySelectorAll(prevArrow),
-        next = document.querySelectorAll(nextArrow),
-        slider = document.querySelectorAll(container),
-        total = document.querySelectorAll(totalCounter),
-        current = document.querySelectorAll(slide),
-        slidesWrapper = document.querySelectorAll(currentCounter),
-        width = document.querySelectorAll(wrapper).width,
-        slidesField = document.querySelectorAll(field);
+        prev = document.querySelector(prevArrow),
+        next = document.querySelector(nextArrow),
+        slider = document.querySelector(container),
+        total = document.querySelector(totalCounter),
+        current = document.querySelector(slide),
+        slidesWrapper = document.querySelector(currentCounter),
+        width = document.querySelector(wrapper).width,
+        slidesField = document.querySelector(field);
 
     if (slides.length < 10) {
         total.textContent =  `0${slides.length}`;
@@ -43,7 +43,7 @@ function slider({container, slide, nextArrow, totalCounter, currentCounter, wrap
         z-index: 15;
         display: flex;
         justify-content: center;
-        margin-rightL 15%;
+        margin-right: 15%;
         margin-left: 15%;
         list-style: none;
     `;
@@ -131,7 +131,7 @@ function slider({container, slide, nextArrow, totalCounter, currentCounter, wrap
             slideIndex = slideTo;
             offset = deleteNotDigits(width) *(slideTo - 1);
 
-            slidesField.style.transform = `trams;ateX(-${offset}px)`;
+            slidesField.style.transform = `translateX(-${offset}px)`;
 
             if(slides.length < 10) {
                 current.textContent = `0${slideIndex}`;
@@ -145,7 +145,7 @@ function slider({container, slide, nextArrow, totalCounter, currentCounter, wrap
     });
 
     function deleteNotDigits(str) {
-        retirn +str.replace(/\D/g, '');
+        return +str.replace(/\D/g, '');
     }
 }
 
