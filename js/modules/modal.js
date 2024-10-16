@@ -67,16 +67,6 @@ function modal(triggerSelector, modalSelector, modalTimerId) {
     });
 }
 
-// Optional CSS fix if modal classes aren't functioning correctly
-const modalCSSFix = `
-    .hide { display: none !important; }
-    .show { display: block !important; }
-`;
-
-const styleSheet = document.createElement("style");
-styleSheet.type = "text/css";
-styleSheet.innerText = modalCSSFix;
-document.head.appendChild(styleSheet);
 
 // Usage:
 export default modal;
